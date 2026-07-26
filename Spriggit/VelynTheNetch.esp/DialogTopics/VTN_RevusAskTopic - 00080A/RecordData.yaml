@@ -1,0 +1,8 @@
+FormKey: 00080A:VelynTheNetch.esp
+EditorID: VTN_RevusAskTopic
+Name:
+  TargetLanguage: English
+  Value: Why does a young netch wander your camp?
+SubtypeName: CUST
+Branch: 000809:VelynTheNetch.esp
+Quest: 000808:VelynTheNetch.esp

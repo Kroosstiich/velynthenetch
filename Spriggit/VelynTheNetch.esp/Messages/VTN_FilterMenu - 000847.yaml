@@ -1,0 +1,23 @@
+FormKey: 000847:VelynTheNetch.esp
+EditorID: VTN_FilterMenu
+Name:
+  TargetLanguage: English
+  Value: Velyn
+Description:
+  TargetLanguage: English
+  Value: 'What about this item?'
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: Always take it
+- Text:
+    TargetLanguage: English
+    Value: Never take it
+- Text:
+    TargetLanguage: English
+    Value: Use the automatic rule
+- Text:
+    TargetLanguage: English
+    Value: Cancel

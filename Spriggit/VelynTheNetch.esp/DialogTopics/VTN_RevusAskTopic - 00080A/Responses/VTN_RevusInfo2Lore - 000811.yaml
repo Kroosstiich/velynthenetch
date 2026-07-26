@@ -1,0 +1,35 @@
+FormKey: 000811:VelynTheNetch.esp
+EditorID: VTN_RevusInfo2Lore
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VTN_TIF_RevusLore
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_HasAskedAboutNetch
+      Object: 000817:VelynTheNetch.esp
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: VTN_TIF_RevusLore
+    OnEnd:
+      ScriptName: VTN_TIF_RevusLore
+      FragmentName: Fragment_Lore
+Responses:
+- ResponseNumber: 1
+  Unknown2: 0x000000
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: That's my little charge, actually. Found her drifting alone near the coast a few months back, no herd in sight to claim her. Took some patience, but she bonded easy enough once she trusted me - gentle as they come, whatever her size might suggest to the unfamiliar eye.
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsIDConditionData
+    Object: 02C1EB:Dragonborn.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 000800:VelynTheNetch.esp
+  ComparisonValue: 0

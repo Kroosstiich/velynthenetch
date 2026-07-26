@@ -1,0 +1,49 @@
+FormKey: 000815:VelynTheNetch.esp
+EditorID: VTN_RevusConfirmInfo3Buy
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VTN_TIF_RevusBuy
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Gold001
+      Object: 00000F:Skyrim.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_MainQuest
+      Object: 000801:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_PriceGold
+      Object: 000807:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_NetchGuideBook
+      Object: 000810:VelynTheNetch.esp
+  ScriptFragments:
+    MutagenObjectType: ScriptFragments
+    FileName: VTN_TIF_RevusBuy
+    OnEnd:
+      ScriptName: VTN_TIF_RevusBuy
+      FragmentName: Fragment_Buy
+Responses:
+- ResponseNumber: 1
+  Unknown2: 0x000000
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: A pleasure doing business. Take good care of the little one - and here, take my notes on her as well.
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsIDConditionData
+    Object: 02C1EB:Dragonborn.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 000817:VelynTheNetch.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 000800:VelynTheNetch.esp
+  ComparisonValue: 0

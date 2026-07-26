@@ -1,0 +1,6 @@
+FormKey: 00085F:VelynTheNetch.esp
+EditorID: VTN_MsgPickupWhitelist
+Description:
+  TargetLanguage: English
+  Value: Velyn picks up an item from your list.
+Flags: []

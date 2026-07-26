@@ -1,0 +1,415 @@
+{
+    "modName": "VelynTheNetch",
+    "displayName": "Velyn the Netch",
+    "minMcmVersion": 9,
+    "cursorFillMode": "topToBottom",
+    "pages": [
+        {
+            "pageDisplayName": "$VTN_Page_General",
+            "content": [
+                {
+                    "text": "$VTN_Header_Features",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgProgressionEnabled",
+                    "text": "$VTN_ProgressionEnabled",
+                    "help": "$VTN_ProgressionEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82B"
+                    }
+                },
+                {
+                    "id": "VTN_CfgHarvestEnabled",
+                    "text": "$VTN_HarvestEnabled",
+                    "help": "$VTN_HarvestEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82A"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRideEnabled",
+                    "text": "$VTN_RideEnabled",
+                    "help": "$VTN_RideEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|829"
+                    }
+                },
+                {
+                    "id": "VTN_CfgPickupEnabled",
+                    "text": "$VTN_PickupEnabled",
+                    "help": "$VTN_PickupEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|834"
+                    }
+                },
+                {
+                    "id": "VTN_CfgNotifyHarvest",
+                    "text": "$VTN_NotifyHarvest",
+                    "help": "$VTN_NotifyHarvest_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82C"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_Controls",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgInventoryKey",
+                    "text": "$VTN_InventoryKey",
+                    "help": "$VTN_InventoryKey_Help",
+                    "type": "keymap",
+                    "ignoreConflicts": false,
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82D"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_Maintenance",
+                    "type": "header"
+                },
+                {
+                    "text": "$VTN_ResetDefaults",
+                    "help": "$VTN_ResetDefaults_Help",
+                    "type": "text",
+                    "action": {
+                        "type": "CallFunction",
+                        "function": "ResetToDefaults"
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "$VTN_Page_Harvest",
+            "content": [
+                {
+                    "text": "$VTN_Header_Harvest",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgHarvestRadius",
+                    "text": "$VTN_HarvestRadius",
+                    "help": "$VTN_HarvestRadius_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 100,
+                        "max": 1500,
+                        "step": 50,
+                        "formatString": "{0} u",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82E"
+                    }
+                },
+                {
+                    "id": "VTN_CfgEnergyPerHour",
+                    "text": "$VTN_EnergyPerHour",
+                    "help": "$VTN_EnergyPerHour_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 1,
+                        "max": 60,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|832"
+                    }
+                },
+                {
+                    "id": "VTN_CfgXPPerHarvest",
+                    "text": "$VTN_XPPerHarvest",
+                    "help": "$VTN_XPPerHarvest_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 1,
+                        "max": 50,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|837"
+                    }
+                },
+                {
+                    "id": "VTN_CfgXPTransportRate",
+                    "text": "$VTN_XPTransportRate",
+                    "help": "$VTN_XPTransportRate_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0.0005,
+                        "max": 0.02,
+                        "step": 0.0005,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|838"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_HarvestRadiusByCategory",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgRadiusFlora",
+                    "text": "$VTN_RadiusFlora",
+                    "help": "$VTN_RadiusFlora_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 1500,
+                        "step": 50,
+                        "formatString": "{0} u",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|839"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRadiusOre",
+                    "text": "$VTN_RadiusOre",
+                    "help": "$VTN_RadiusOre_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 1500,
+                        "step": 50,
+                        "formatString": "{0} u",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83A"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRadiusCritter",
+                    "text": "$VTN_RadiusCritter",
+                    "help": "$VTN_RadiusCritter_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 1500,
+                        "step": 50,
+                        "formatString": "{0} u",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83B"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRadiusItems",
+                    "text": "$VTN_RadiusItems",
+                    "help": "$VTN_RadiusItems_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 1500,
+                        "step": 50,
+                        "formatString": "{0} u",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83C"
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "$VTN_Page_Filters",
+            "content": [
+                {
+                    "text": "$VTN_Header_ManualFilter",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgFilterKey",
+                    "text": "$VTN_FilterKey",
+                    "help": "$VTN_FilterKey_Help",
+                    "type": "keymap",
+                    "ignoreConflicts": false,
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|846"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_PickupFilters",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgPickupGoldEnabled",
+                    "text": "$VTN_PickupGoldEnabled",
+                    "help": "$VTN_PickupGoldEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83D"
+                    }
+                },
+                {
+                    "id": "VTN_CfgPickupIngredientsEnabled",
+                    "text": "$VTN_PickupIngredientsEnabled",
+                    "help": "$VTN_PickupIngredientsEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83F"
+                    }
+                },
+                {
+                    "id": "VTN_CfgPickupMiscEnabled",
+                    "text": "$VTN_PickupMiscEnabled",
+                    "help": "$VTN_PickupMiscEnabled_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|83E"
+                    }
+                },
+                {
+                    "id": "VTN_CfgMinItemValue",
+                    "text": "$VTN_MinItemValue",
+                    "help": "$VTN_MinItemValue_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 100,
+                        "step": 1,
+                        "formatString": "{0} or",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|835"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_OreFilters",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgOreCooldownMinutes",
+                    "text": "$VTN_OreCooldownMinutes",
+                    "help": "$VTN_OreCooldownMinutes_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 1,
+                        "max": 120,
+                        "step": 1,
+                        "formatString": "{0} min",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|836"
+                    }
+                },
+                {
+                    "text": "$VTN_Header_BlockedLocations",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgBlockDwelling",
+                    "text": "$VTN_BlockDwelling",
+                    "help": "$VTN_BlockDwelling_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|840"
+                    }
+                },
+                {
+                    "id": "VTN_CfgBlockPlayerHouse",
+                    "text": "$VTN_BlockPlayerHouse",
+                    "help": "$VTN_BlockPlayerHouse_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|841"
+                    }
+                },
+                {
+                    "id": "VTN_CfgBlockStore",
+                    "text": "$VTN_BlockStore",
+                    "help": "$VTN_BlockStore_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|842"
+                    }
+                },
+                {
+                    "id": "VTN_CfgBlockInn",
+                    "text": "$VTN_BlockInn",
+                    "help": "$VTN_BlockInn_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|843"
+                    }
+                },
+                {
+                    "id": "VTN_CfgBlockStable",
+                    "text": "$VTN_BlockStable",
+                    "help": "$VTN_BlockStable_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|844"
+                    }
+                },
+                {
+                    "id": "VTN_CfgBlockFarm",
+                    "text": "$VTN_BlockFarm",
+                    "help": "$VTN_BlockFarm_Help",
+                    "type": "toggle",
+                    "valueOptions": {
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|845"
+                    }
+                }
+            ]
+        },
+        {
+            "pageDisplayName": "$VTN_Page_Ride",
+            "content": [
+                {
+                    "text": "$VTN_Header_RidePosition",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgRideOffsetY",
+                    "text": "$VTN_RideOffsetY",
+                    "help": "$VTN_RideOffsetY_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": -150,
+                        "max": 50,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|830"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRideOffsetZ",
+                    "text": "$VTN_RideOffsetZ",
+                    "help": "$VTN_RideOffsetZ_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": -150,
+                        "max": 100,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|831"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRideOffsetX",
+                    "text": "$VTN_RideOffsetX",
+                    "help": "$VTN_RideOffsetX_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": -80,
+                        "max": 80,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82F"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+FormKey: 000818:VelynTheNetch.esp
+EditorID: VTN_RevusRemindTopic
+Name:
+  TargetLanguage: English
+  Value: Remind me - how did you come to have her?
+SubtypeName: CUST
+Branch: 000819:VelynTheNetch.esp
+Quest: 000808:VelynTheNetch.esp

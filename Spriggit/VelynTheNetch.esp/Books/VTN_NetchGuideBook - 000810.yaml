@@ -1,0 +1,55 @@
+FormKey: 000810:VelynTheNetch.esp
+EditorID: VTN_NetchGuideBook
+Name:
+  TargetLanguage: English
+  Value: On the Keeping of Netches
+Model:
+  File: Meshes\Clutter\Books\BasicBook01.nif
+BookText:
+  TargetLanguage: English
+  Value: '[pagebreak]
+
+    <p align="center">
+
+
+    On the Keeping of Netches
+
+    <i>Notes for a New Keeper</i>
+
+
+    by
+
+    Revus Sarvani
+
+    </p>
+
+
+
+    [pagebreak]
+
+    <p align="left">
+    <img src=''img://Textures/Interface/Books/Illuminated_Letters/N_letter.png''>etches have
+    drifted the coasts and ashlands of Morrowind since before the first ships came to Vvardenfell, tugged along by the
+    wind like so much thistledown given flesh. My people have herded them for generations, prizing their hide, their
+    meat, and above all the strange ink they weep when startled - I dare say a caravan without a netch or two trailing
+    behind is barely a caravan at all.
+
+
+    Calves such as this one wander off from a herd more often than you''d think, and few survive it alone. This one
+    did, if only just. She took to me quick enough once she understood I meant her no harm - netches are gentle sorts
+    beneath all that drifting and bobbing, whatever their size might suggest to the unfamiliar eye.
+
+
+    Keep her near and she''ll follow you faithfully, wherever your travels take you. Activate her as you would a chest
+    or a strongbox and she''ll open her satchel to you plain as day - mind you, even a bonded netch can only carry so
+    much before she''ll refuse to take on more. Overfill her and she''ll let you know it plainly enough.
+
+
+    Treat her kindly and she''ll want for nothing more. Safe travels to the both of you.
+
+
+    - Revus Sarvani</p>'
+Teaches:
+  MutagenObjectType: BookTeachesNothing
+Weight: 1
+InventoryArt: 080A4A:Skyrim.esm

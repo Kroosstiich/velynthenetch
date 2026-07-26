@@ -1,0 +1,22 @@
+FormKey: 00080B:VelynTheNetch.esp
+EditorID: VTN_RevusRemindInfo
+Responses:
+- ResponseNumber: 1
+  Unknown2: 0x000000
+  Unknown3: 0x000000
+  Text:
+    TargetLanguage: English
+    Value: That netch of yours still trailing after you? Good. Keep her close and she'll lighten your load without complaint - just mind you don't pack her satchel too full. Even a good-natured netch has her limits.
+  ScriptNotes: ''
+  Edits: ''
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetIsIDConditionData
+    Object: 02C1EB:Dragonborn.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 000800:VelynTheNetch.esp
+  ComparisonValue: 1
