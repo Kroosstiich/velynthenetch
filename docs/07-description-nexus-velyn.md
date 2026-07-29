@@ -1,7 +1,9 @@
 # Description Nexus, Velyn the Netch
 
 Anglais d'abord, puis français. À relire et ajuster librement.
-Les `[LIENS ICI]` et `[DISCORD ICI]` sont à remplacer quand ce sera en ligne.
+⚠️ **Il reste `[DISCORD ICI]` à traiter (lignes ~233 en anglais et ~552 en français)** : soit y mettre
+une vraie invitation, soit supprimer ces deux phrases. Tel quel, un joueur lit « A Discord will be set up
+for this: [DISCORD ICI] » sur la page. Les liens Piggyback, eux, ont été renseignés le 2026-07-29.
 
 ---
 ---
@@ -274,7 +276,7 @@ credit:
 | [powerofthree's Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854) | powerofthree | The scanning and utility functions her gathering relies on |
 | [PapyrusUtil](https://www.nexusmods.com/skyrimspecialedition/mods/13048) | exiledviper, meh321 | Stores your manual item filters (optional) |
 | [Dynamic String Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/107676) | Sasnikol | Applies translations without touching the plugin |
-| **Piggyback** [LIENS ICI] | Kroosstii | Carrying her on your back (optional, made for this mod) |
+| **[Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556)** | Kroosstii | Carrying her on your back (optional, made for this mod) |
 
 **Recommended, not required**
 
@@ -369,6 +371,14 @@ Elle a des règles, et elles comptent :
 Chacune de ces règles peut être ajustée ou désactivée dans le MCM : ce qu'elle ramasse, sa portée, les
 lieux interdits, sa vitesse d'apprentissage.
 
+**La gelée de netch.** *(nouveau en 1.1.0)* Un netch qui se sent bien laisse échapper un peu de gelée
+quand il se repose, et Velyn ne fait pas exception. Tous les quelques jours, elle en ajoute
+discrètement à ce qu'elle transporte, et plus elle a grandi, plus elle en donne : une unité au début,
+jusqu'à cinq une fois adulte. Il n'y a rien à faire et rien à prélever sur elle, cela s'accumule
+simplement au fil de vos voyages. Si elle est déjà chargée à ras bord, elle la garde en réserve jusqu'à
+ce que vous la déchargiez, rien n'est perdu. La fréquence est réglable dans le MCM, et la production
+peut être désactivée entièrement.
+
 ---
 
 ## 🇫🇷 Traduction française
@@ -390,10 +400,15 @@ lieux interdits, sa vitesse d'apprentissage.
 
 **Optionnels**
 
-**Piggyback** [LIENS ICI] permet à Velyn de voyager **sur votre dos** au lieu de vous suivre au sol.
-C'est un plugin séparé, à installer seulement si l'idée vous plaît. Sans lui, l'entrée
-**Monte sur mon dos** n'apparaît tout simplement pas dans son menu et Velyn vous suit normalement. Rien
-d'autre ne change.
+**[Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556)** permet à Velyn de voyager
+**sur votre dos** au lieu de vous suivre au sol. C'est un plugin séparé, à installer seulement si l'idée
+vous plaît. Sans lui, l'entrée **Monte sur mon dos** n'apparaît tout simplement pas dans son menu et
+Velyn vous suit normalement. Rien d'autre ne change.
+
+Si vous l'utilisez, **prenez la version 1.1.0 ou plus récente**. Elle corrige le fait qu'elle vous
+poussait sur le côté pendant le portage, l'impression qu'elle se téléportait autour de vous lors des
+demi-tours rapides, et sa position trop en arrière sur les personnages de petite taille. C'est un mod
+séparé, il se met donc à jour indépendamment de Velyn.
 
 **[PapyrusUtil](https://www.nexusmods.com/skyrimspecialedition/mods/13048)** permet de définir **vos
 propres règles de récolte**. Avec ce mod installé, vous pouvez assigner une touche dans le MCM, viser
@@ -582,7 +597,7 @@ d'être cités :
 | [powerofthree's Papyrus Extender](https://www.nexusmods.com/skyrimspecialedition/mods/22854) | powerofthree | Les fonctions de scan sur lesquelles repose sa récolte |
 | [PapyrusUtil](https://www.nexusmods.com/skyrimspecialedition/mods/13048) | exiledviper, meh321 | Stocke vos filtres d'objets manuels (optionnel) |
 | [Dynamic String Distributor](https://www.nexusmods.com/skyrimspecialedition/mods/107676) | Sasnikol | Applique les traductions sans toucher au plugin |
-| **Piggyback** [LIENS ICI] | Kroosstii | Le portage sur le dos (optionnel, créé pour ce mod) |
+| **[Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556)** | Kroosstii | Le portage sur le dos (optionnel, créé pour ce mod) |
 
 **Recommandé, pas obligatoire**
 
