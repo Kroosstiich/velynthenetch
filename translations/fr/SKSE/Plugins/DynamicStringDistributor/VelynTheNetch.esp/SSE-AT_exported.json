@@ -1,0 +1,641 @@
+[
+    {
+        "original": "On the Keeping of Netches",
+        "string": "Sur l'élevage des netchs",
+        "status": "TranslationComplete",
+        "form_id": "03000810|VelynTheNetch.esp",
+        "type": "BOOK FULL",
+        "index": null,
+        "editor_id": "VTN_NetchGuideBook"
+    },
+    {
+        "original": "[pagebreak]\r\n<p align=\"center\">\r\n\r\nOn the Keeping of Netches\r\n<i>Notes for a New Keeper</i>\r\n\r\nby\r\nRevus Sarvani\r\n</p>\r\n\r\n\r\n[pagebreak]\r\n<p align=\"left\"> <img src='img://Textures/Interface/Books/Illuminated_Letters/N_letter.png'>etches have drifted the coasts and ashlands of Morrowind since before the first ships came to Vvardenfell, tugged along by the wind like so much thistledown given flesh. My people have herded them for generations, prizing their hide, their meat, and above all the strange ink they weep when startled - I dare say a caravan without a netch or two trailing behind is barely a caravan at all.\r\n\r\nCalves such as this one wander off from a herd more often than you'd think, and few survive it alone. This one did, if only just. She took to me quick enough once she understood I meant her no harm - netches are gentle sorts beneath all that drifting and bobbing, whatever their size might suggest to the unfamiliar eye.\r\n\r\nKeep her near and she'll follow you faithfully, wherever your travels take you. Activate her as you would a chest or a strongbox and she'll open her satchel to you plain as day - mind you, even a bonded netch can only carry so much before she'll refuse to take on more. Overfill her and she'll let you know it plainly enough.\r\n\r\nTreat her kindly and she'll want for nothing more. Safe travels to the both of you.\r\n\r\n- Revus Sarvani</p>",
+        "string": "[pagebreak]\n<p align=\"center\">\n\nSur l'élevage des netchs\n<i>Notes pour un nouveau gardien</i>\n\npar\nRevus Sarvani\n</p>\n\n[pagebreak]\n<p align=\"left\"> <img src='img://Textures/Interface/Books/Illuminated_Letters/L_letter.png'>es netchs dérivent le long des côtes et des terres cendreuses de Morrowind depuis bien avant que les premiers navires n'abordent Vvardenfell, portés par le vent comme autant de duvets de chardon faits chair. Mon peuple les élève depuis des générations, pour leur cuir, leur chair, et par-dessus tout pour l'étrange encre qu'ils versent lorsqu'on les effraie. J'oserais dire qu'une caravane sans un netch ou deux à sa suite n'est guère une caravane.\n\nLes petits comme celle-ci s'égarent de leur troupeau plus souvent qu'on ne le croit, et bien peu y survivent seuls. Celle-ci s'en est tirée, de justesse. Elle s'est attachée à moi assez vite, une fois qu'elle a compris que je ne lui voulais aucun mal. Les netchs sont des créatures douces sous leurs airs de flotter et de tanguer, quoi qu'en laisse penser leur taille à qui ne les connaît pas.\n\nGardez-la près de vous et elle vous suivra fidèlement, où que vos voyages vous mènent. Activez-la comme vous le feriez d'un coffre et elle vous ouvrira sa besace sans façon. Sachez cependant que même un netch attaché ne peut porter qu'une certaine charge avant de refuser d'en prendre davantage. Surchargez-la et elle vous le fera savoir sans détour.\n\nTraitez-la avec bonté et elle ne demandera rien de plus. Bon voyage à vous deux.\n\n- Revus Sarvani</p>",
+        "status": "TranslationComplete",
+        "form_id": "03000810|VelynTheNetch.esp",
+        "type": "BOOK DESC",
+        "index": null,
+        "editor_id": "VTN_NetchGuideBook"
+    },
+    {
+        "original": "Velyn",
+        "string": "Velyn",
+        "status": "NoTranslationRequired",
+        "form_id": "03000802|VelynTheNetch.esp",
+        "type": "NPC_ FULL",
+        "index": null,
+        "editor_id": "VTN_Velyn"
+    },
+    {
+        "original": "Why does a young netch wander your camp?",
+        "string": "Pourquoi un jeune netch traîne-t-il dans votre camp ?",
+        "status": "TranslationComplete",
+        "form_id": "0300080A|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_RevusAskTopic"
+    },
+    {
+        "original": "That's my little charge, actually. Found her drifting alone near the coast a few months back, no herd in sight to claim her. Took some patience, but she bonded easy enough once she trusted me - gentle as they come, whatever her size might suggest to the unfamiliar eye.",
+        "string": "C'est ma petite protégée, en réalité. Je l'ai trouvée qui dérivait seule près de la côte il y a quelques mois, sans troupeau alentour pour la réclamer. Il m'a fallu de la patience, mais elle s'est attachée sans mal une fois qu'elle m'a fait confiance. Les netchs sont des créatures douces, quoi qu'en laisse penser leur taille à qui ne les connaît pas.",
+        "status": "TranslationComplete",
+        "form_id": "03000811|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_RevusInfo2Lore"
+    },
+    {
+        "original": "I'll take her, then. (500 gold)",
+        "string": "Je la prends, alors. (500 pièces d'or)",
+        "status": "TranslationComplete",
+        "form_id": "03000812|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_RevusBuyConfirmTopic"
+    },
+    {
+        "original": "That'll cost you more gold than you're carrying. Come back when your purse is heavier.",
+        "string": "Cela vous coûtera plus d'or que vous n'en portez. Revenez quand votre bourse sera mieux garnie.",
+        "status": "TranslationComplete",
+        "form_id": "03000814|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_RevusConfirmInfo2NotEnoughGold"
+    },
+    {
+        "original": "A pleasure doing business. Take good care of the little one - and here, take my notes on her as well.",
+        "string": "Ravi d'avoir fait affaire. Prenez bien soin de la petite, et tenez, emportez aussi mes notes à son sujet.",
+        "status": "TranslationComplete",
+        "form_id": "03000815|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_RevusConfirmInfo3Buy"
+    },
+    {
+        "original": "Remind me - how did you come to have her?",
+        "string": "Rappelez-moi, comment en êtes-vous venu à l'avoir ?",
+        "status": "TranslationComplete",
+        "form_id": "03000818|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_RevusRemindTopic"
+    },
+    {
+        "original": "That netch of yours still trailing after you? Good. Keep her close and she'll lighten your load without complaint - just mind you don't pack her satchel too full. Even a good-natured netch has her limits.",
+        "string": "Votre netch vous suit toujours ? Bien. Gardez-la près de vous et elle allégera votre fardeau sans se plaindre, veillez seulement à ne pas trop remplir sa besace. Même un netch de bonne composition a ses limites.",
+        "status": "TranslationComplete",
+        "form_id": "0300080B|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_RevusRemindInfo"
+    },
+    {
+        "original": "Come on, let's go.",
+        "string": "Venez ! allons-y.",
+        "status": "NoTranslationRequired",
+        "form_id": "03000821|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_VelynFollowTopic"
+    },
+    {
+        "original": "*She perks up and drifts eagerly back to your side.*",
+        "string": "*She perks up and drifts eagerly back to your side.*",
+        "status": "NoTranslationRequired",
+        "form_id": "03000823|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_VelynFollowInfo"
+    },
+    {
+        "original": "Let's see what you're carrying.",
+        "string": "Let's see what you're carrying.",
+        "status": "NoTranslationRequired",
+        "form_id": "0300081B|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_VelynInventoryTopic"
+    },
+    {
+        "original": "*She tips open the pouches at her side, letting you look through what she's carrying.*",
+        "string": "*She tips open the pouches at her side, letting you look through what she's carrying.*",
+        "status": "NoTranslationRequired",
+        "form_id": "0300081D|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_VelynInventoryInfo"
+    },
+    {
+        "original": "Wait for me here.",
+        "string": "Velyn attend ici.",
+        "status": "TranslationComplete",
+        "form_id": "0300081E|VelynTheNetch.esp",
+        "type": "DIAL FULL",
+        "index": null,
+        "editor_id": "VTN_VelynWaitTopic"
+    },
+    {
+        "original": "*She slows and settles in place, drifting gently as she watches you go.*",
+        "string": "*She slows and settles in place, drifting gently as she watches you go.*",
+        "status": "NoTranslationRequired",
+        "form_id": "03000820|VelynTheNetch.esp",
+        "type": "INFO NAM1",
+        "index": 1,
+        "editor_id": "VTN_VelynWaitInfo"
+    },
+    {
+        "original": "Velyn the Netch - Dialogue",
+        "string": "Velyn the Netch - Dialogue",
+        "status": "NoTranslationRequired",
+        "form_id": "03000808|VelynTheNetch.esp",
+        "type": "QUST FULL",
+        "index": null,
+        "editor_id": "VTN_DialogueQuest"
+    },
+    {
+        "original": "Velyn the Netch",
+        "string": "Velyn the Netch",
+        "status": "NoTranslationRequired",
+        "form_id": "03000801|VelynTheNetch.esp",
+        "type": "QUST FULL",
+        "index": null,
+        "editor_id": "VTN_MainQuest"
+    },
+    {
+        "original": "Velyn the Netch",
+        "string": "Velyn the Netch",
+        "status": "NoTranslationRequired",
+        "form_id": "03000833|VelynTheNetch.esp",
+        "type": "QUST FULL",
+        "index": null,
+        "editor_id": "VTN_MCMQuest"
+    },
+    {
+        "original": "What about this item?",
+        "string": "Que faire de cet objet ?",
+        "status": "TranslationComplete",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "Velyn",
+        "string": "Velyn",
+        "status": "NoTranslationRequired",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG FULL",
+        "index": null,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "Always take it",
+        "string": "Toujours le ramasser/récolter",
+        "status": "TranslationComplete",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 0,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "Never take it",
+        "string": "Ne jamais le ramasser/récolter",
+        "status": "TranslationComplete",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 1,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "Use the automatic rule",
+        "string": "Revenir à la règle automatique",
+        "status": "TranslationComplete",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 2,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "Cancel",
+        "string": "Annuler",
+        "status": "TranslationComplete",
+        "form_id": "03000847|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 3,
+        "editor_id": "VTN_FilterMenu"
+    },
+    {
+        "original": "Velyn has settled and shed some netch jelly.",
+        "string": "Velyn s'est posée et a laissé un peu de gelée de netch.",
+        "status": "TranslationComplete",
+        "form_id": "03000863|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJelly"
+    },
+    {
+        "original": "You already have Velyn.",
+        "string": "Vous avez déjà Velyn.",
+        "status": "TranslationComplete",
+        "form_id": "03000848|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgAlreadyHave"
+    },
+    {
+        "original": "Velyn will never take this item now.",
+        "string": "Velyn ne prendra jamais cet objet.",
+        "status": "TranslationComplete",
+        "form_id": "03000855|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgBlacklisted"
+    },
+    {
+        "original": "Velyn has grown enough to gather things on her own now.",
+        "string": "Velyn a assez grandi pour récolter d'elle-même.",
+        "status": "TranslationComplete",
+        "form_id": "03000858|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgCanHarvest"
+    },
+    {
+        "original": "Velyn cannot carry anything more.",
+        "string": "Velyn ne peut rien porter de plus.",
+        "status": "TranslationComplete",
+        "form_id": "03000860|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgCannotCarryMore"
+    },
+    {
+        "original": "Velyn snatches an insect from the air.",
+        "string": "Velyn attrape un insecte au vol.",
+        "status": "TranslationComplete",
+        "form_id": "0300085C|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgCritter"
+    },
+    {
+        "original": "Velyn climbs down off your back.",
+        "string": "Velyn descend de votre dos.",
+        "status": "TranslationComplete",
+        "form_id": "0300084D|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgDismount"
+    },
+    {
+        "original": "Automatic rule restored for this item.",
+        "string": "Règle automatique rétablie pour cet objet.",
+        "status": "TranslationComplete",
+        "form_id": "03000856|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgFilterCleared"
+    },
+    {
+        "original": "Velyn is at your side again.",
+        "string": "Velyn est de nouveau à vos côtés.",
+        "status": "TranslationComplete",
+        "form_id": "0300084C|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgFollowing"
+    },
+    {
+        "original": "Velyn gathers a plant.",
+        "string": "Velyn cueille une plante.",
+        "status": "TranslationComplete",
+        "form_id": "0300085D|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgHarvestFlora"
+    },
+    {
+        "original": "Velyn works some ore loose.",
+        "string": "Velyn extrait du minerai.",
+        "status": "TranslationComplete",
+        "form_id": "0300085E|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgHarvestOre"
+    },
+    {
+        "original": "Velyn has joined you!",
+        "string": "Velyn vous a rejoint !",
+        "status": "TranslationComplete",
+        "form_id": "03000849|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgJoined"
+    },
+    {
+        "original": "Velyn has grown a little stronger.",
+        "string": "Velyn a gagné un peu de force.",
+        "status": "TranslationComplete",
+        "form_id": "03000859|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgLevelUp"
+    },
+    {
+        "original": "Velyn climbs onto your back.",
+        "string": "Velyn grimpe sur votre dos.",
+        "status": "TranslationComplete",
+        "form_id": "0300084E|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgMount"
+    },
+    {
+        "original": "The Piggyback plugin is not installed.",
+        "string": "Le module Piggyback n'est pas installé.",
+        "status": "TranslationComplete",
+        "form_id": "0300084F|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgNoPiggyback"
+    },
+    {
+        "original": "Nothing in your crosshair.",
+        "string": "Rien dans votre viseur.",
+        "status": "TranslationComplete",
+        "form_id": "03000852|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgNothingTargeted"
+    },
+    {
+        "original": "Velyn is not nearby.",
+        "string": "Velyn n'est pas à proximité.",
+        "status": "TranslationComplete",
+        "form_id": "0300084A|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgNotNearby"
+    },
+    {
+        "original": "Velyn picks something up.",
+        "string": "Velyn ramasse quelque chose.",
+        "status": "TranslationComplete",
+        "form_id": "0300085B|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgPickup"
+    },
+    {
+        "original": "Velyn picks up an item from your list.",
+        "string": "Velyn ramasse un objet de votre liste.",
+        "status": "TranslationComplete",
+        "form_id": "0300085F|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgPickupWhitelist"
+    },
+    {
+        "original": "Carrying Velyn on your back is turned off in the options.",
+        "string": "Le portage sur le dos est désactivé dans les options.",
+        "status": "TranslationComplete",
+        "form_id": "03000850|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgRideDisabled"
+    },
+    {
+        "original": "Velyn's settings have been reset to default.",
+        "string": "Les réglages de Velyn ont été réinitialisés.",
+        "status": "TranslationComplete",
+        "form_id": "03000857|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgSettingsReset"
+    },
+    {
+        "original": "Status unavailable.",
+        "string": "État indisponible.",
+        "status": "TranslationComplete",
+        "form_id": "03000851|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgStatusUnavailable"
+    },
+    {
+        "original": "You are aiming at this item.",
+        "string": "Vous visez cet objet.",
+        "status": "TranslationComplete",
+        "form_id": "03000853|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgTargeting"
+    },
+    {
+        "original": "Velyn is too laden to carry any more just now.",
+        "string": "Velyn est trop chargée pour porter davantage.",
+        "status": "TranslationComplete",
+        "form_id": "0300085A|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgTooLaden"
+    },
+    {
+        "original": "Velyn will wait here.",
+        "string": "Velyn attend ici.",
+        "status": "TranslationComplete",
+        "form_id": "0300084B|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgWaiting"
+    },
+    {
+        "original": "Velyn will always take this item now.",
+        "string": "Velyn prendra toujours cet objet.",
+        "status": "TranslationComplete",
+        "form_id": "03000854|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_MsgWhitelisted"
+    },
+    {
+        "original": "What would you like to do?",
+        "string": "Que veux-tu faire ?",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "Velyn",
+        "string": "Velyn",
+        "status": "NoTranslationRequired",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG FULL",
+        "index": null,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "See what she's carrying",
+        "string": "Voir son inventaire",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 0,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "Wait here",
+        "string": "Attends ici",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 1,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "Come along",
+        "string": "Viens, on y va",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 2,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "Climb onto my back / Climb down",
+        "string": "Monte sur mon dos / Descends",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 3,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "How are you?",
+        "string": "Comment vas-tu ?",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 4,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "Never mind",
+        "string": "Ne rien faire",
+        "status": "TranslationComplete",
+        "form_id": "03000824|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 5,
+        "editor_id": "VTN_VelynMenu"
+    },
+    {
+        "original": "What would you like to do?",
+        "string": "Que veux-tu faire ?",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG DESC",
+        "index": null,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "Velyn",
+        "string": "Velyn",
+        "status": "NoTranslationRequired",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG FULL",
+        "index": null,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "See what she's carrying",
+        "string": "Voir son inventaire",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 0,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "Wait here",
+        "string": "Attends ici",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 1,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "Come along",
+        "string": "Viens, on y va",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 2,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "How are you?",
+        "string": "Comment vas-tu ?",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 3,
+        "editor_id": "VTN_VelynMenuNoRide"
+    },
+    {
+        "original": "Never mind",
+        "string": "Ne rien faire",
+        "status": "TranslationComplete",
+        "form_id": "03000861|VelynTheNetch.esp",
+        "type": "MESG ITXT",
+        "index": 4,
+        "editor_id": "VTN_VelynMenuNoRide"
+    }
+]

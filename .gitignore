@@ -1,0 +1,15 @@
+# Sorties de build
+dist/
+fomod-build/
+build/
+
+# Sauvegardes locales
+backups/
+
+# Outils locaux (a retelecharger, pas a versionner)
+tools/
+
+# Divers
+.vs/
+.idea/
+*.bak

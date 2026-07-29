@@ -41,7 +41,22 @@ float Property VTN_EnergyPerGameHour = 10.0 Auto
 float Property VTN_EnergyMaxBase = 10.0 Auto
 float Property VTN_EnergyMaxPerLevel = 2.0 Auto
 
+; --- Production de gelee de netch (2026-07-29, demande de Kevin, inspiree d'une suggestion joueuse) ---
+; Un netch en bonne sante laisse naturellement echapper un peu de gelee quand il se repose : Velyn en
+; produit donc toute seule avec le temps, sans que le joueur ait a la "traire". La quantite depend de
+; son NIVEAU - c'est une recompense de progression, pas une source infinie.
+; Cadence en jours de jeu. La globale MCM l'emporte si elle est definie ; 0 = production desactivee.
+GlobalVariable Property VTN_CfgJellyDays Auto
+; Partagee avec VTN_HarvestScript : un joueur qui a coupe les notifications de recolte ne veut pas non
+; plus etre notifie de la production de gelee.
+GlobalVariable Property VTN_CfgNotifyHarvest Auto
+float Property VTN_JellyIntervalDays = 3.0 Auto
+; Quantite = base + niveau / paliers -> 1 unite au niveau 1, puis +1 tous les 5 niveaux (5 au niveau 20).
+int Property VTN_JellyBase = 1 Auto
+int Property VTN_JellyLevelsPerUnit = 5 Auto
+
 float _lastGameTime = 0.0
+float _lastJellyDay = 0.0
 
 ; --------------------------------------------------------------------------------------------------
 ; Consultation
@@ -151,6 +166,88 @@ Function UpdateEnergy()
         energy = maxEnergy
     endif
     VTN_Energy.SetValue(energy)
+EndFunction
+
+; --------------------------------------------------------------------------------------------------
+; Gelee de netch
+; --------------------------------------------------------------------------------------------------
+
+; Quantite produite par cycle, fonction du niveau. Division entiere volontaire : 1 unite du niveau 1 a
+; 4, 2 de 5 a 9... jusqu'a 5 au niveau 20.
+int Function GetJellyYield()
+    return VTN_JellyBase + GetLevel() / VTN_JellyLevelsPerUnit
+EndFunction
+
+; Cadence effective en jours de jeu : la globale MCM l'emporte si elle existe. Une valeur a 0 est ici
+; LEGITIME (le joueur a coupe la production), on ne replie donc PAS sur le defaut dans ce cas - c'est
+; l'inverse de GetRideOffset, ou 0 est une position valide et l'absence de globale le seul repli.
+float Function GetJellyIntervalDays()
+    if VTN_CfgJellyDays
+        return VTN_CfgJellyDays.GetValue()
+    endif
+    return VTN_JellyIntervalDays
+EndFunction
+
+; Meme principe que UpdateEnergy : on raisonne en TEMPS DE JEU ecoule, pas en nombre de ticks, donc le
+; sommeil, l'attente et le timescale du joueur sont pris en compte gratuitement.
+Function UpdateJelly(Actor akVelyn)
+    if !akVelyn || VTN_HasVelyn.GetValueInt() != 1
+        return
+    endif
+
+    float interval = GetJellyIntervalDays()
+    if interval <= 0.0
+        return ; production desactivee au MCM
+    endif
+
+    float now = Utility.GetCurrentGameTime()
+
+    ; Premier passage (ou premiere fois apres une mise a jour du mod) : on amorce l'horloge sans rien
+    ; produire, sinon Velyn offrirait un lot d'emblee a un joueur qui vient de mettre a jour.
+    if _lastJellyDay <= 0.0
+        _lastJellyDay = now
+        return
+    endif
+
+    ; Temps negatif = chargement d'une sauvegarde anterieure : on resynchronise sans produire.
+    if now < _lastJellyDay
+        _lastJellyDay = now
+        return
+    endif
+
+    if (now - _lastJellyDay) < interval
+        return
+    endif
+
+    ; Elle ne produit pas si elle ploie deja sous la charge. On ne touche PAS a _lastJellyDay dans ce
+    ; cas : la gelee est simplement "en attente" et arrivera des que le joueur l'aura delestee, plutot
+    ; que d'etre perdue en silence.
+    if akVelyn.GetTotalItemWeight() >= GetCapacity()
+        return
+    endif
+
+    ; ⚠️ PAS GetFormFromEditorID ici (2026-07-29) : cette fonction a bien renvoye None sur
+    ; "DLC02NetchJelly", constate dans le log ("Gelee : DLC02NetchJelly introuvable"). Elle ne resout
+    ; que les EditorID reellement conservees en memoire par le moteur - ce qui marche pour les mots-cles
+    ; et pour nos propres records, mais pas pour un ingredient d'un master. Pour une forme vanilla ou
+    ; DLC, c'est GetFormFromFile qu'il faut : elle resout par plugin + FormID, sans dependre d'aucun
+    ; cache. FormID de Netch Jelly verifie sur UESP : xx01CD72 (EditorID DLC02NetchJelly).
+    Ingredient jelly = Game.GetFormFromFile(0x0001CD72, "Dragonborn.esm") as Ingredient
+    if !jelly
+        ; Dragonborn absent : on n'insiste pas, et on n'arme pas l'horloge non plus, pour que la
+        ; production reprenne d'elle-meme si le probleme est corrige.
+        Debug.TraceUser("VTN", "Gelee : Netch Jelly introuvable (Dragonborn.esm absent ?), production ignoree")
+        return
+    endif
+
+    int amount = GetJellyYield()
+    akVelyn.AddItem(jelly, amount, true) ; true = silencieux, la notification ci-dessous suffit
+    _lastJellyDay = now
+
+    if VTN_CfgNotifyHarvest == None || VTN_CfgNotifyHarvest.GetValueInt() != 0
+        Notify("VTN_MsgJelly")
+    endif
+    Debug.TraceUser("VTN", "Gelee produite : " + amount + " (niveau " + GetLevel() + ")")
 EndFunction
 
 ; Consomme 1 point si possible. Un point = UN point de recolte, quelle que soit la quantite obtenue

@@ -11,15 +11,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProjectRoot   = $PSScriptRoot
-# Chemins specifiques a votre machine. Definissez-les en variables d'environnement plutot que de
-# modifier ce fichier :
-#   $env:SKYRIM_SE_PATH    = "D:\Steam\steamapps\common\Skyrim Special Edition"
-#   $env:MO2_INSTANCE_PATH = "C:\Users\<vous>\AppData\Local\ModOrganizer\<votre instance>"
-# A defaut, les valeurs par defaut ci-dessous s'appliquent.
-$GameDir = $env:SKYRIM_SE_PATH
-if (-not $GameDir) { $GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition" }
-$MO2Instance = $env:MO2_INSTANCE_PATH
-if (-not $MO2Instance) { $MO2Instance = Join-Path $env:LOCALAPPDATA "ModOrganizer\Skyrim Special Edition" }
+$GameDir       = "E:\SteamLibrary\steamapps\common\Skyrim Special Edition"
+$MO2Instance   = "C:\Users\Kevin\AppData\Local\ModOrganizer\Skyrim SE MODS"
 $DevModName    = "VelynTheNetch-dev"
 
 $SpriggitExe   = Join-Path $ProjectRoot "tools\spriggit\CLI\Spriggit.CLI.exe"

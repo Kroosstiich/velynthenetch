@@ -313,8 +313,10 @@ Function ShowVelynMenu()
         ; Piggyback continue de la coller au dos a chaque frame et "attends ici" n'a aucun effet visible.
         if Piggyback.IsAttached(velynActor)
             Piggyback.Detach(velynActor)
+            ; L'attente vient AVANT SetDontMove : rendre la main a l'IA pendant que Piggyback place
+            ; encore Velyn image par image la fait piloter par deux systemes a la fois (voir ToggleRide).
+            Utility.Wait(0.9)
             velynActor.SetDontMove(false)
-            Utility.Wait(0.9) ; laisse la transition de sortie se terminer avant de la figer sur place
         endif
         VTN_IsWaiting.SetValueInt(1)
         Notify("VTN_MsgWaiting")
@@ -399,6 +401,12 @@ Function ToggleRide(Actor velynActor)
 
     if Piggyback.IsAttached(velynActor)
         Piggyback.Detach(velynActor)
+        ; Detach rend la main TOUT DE SUITE mais la transition de sortie dure ~0,8 s, pendant lesquelles
+        ; le plugin continue de placer Velyn image par image. Lever SetDontMove avant la fin la fait
+        ; piloter par deux systemes a la fois : son IA la deplace, le rig la remet, et elle oscille -
+        ; constate en jeu le 2026-07-28, elle traversait le sol en boucle. On attend donc la fin de la
+        ; transition avant de lui rendre son IA, comme le fait deja le chemin "Attends ici".
+        Utility.Wait(0.9)
         velynActor.SetDontMove(false)
         ; Force la re-evaluation de la pile de packages en descendant du dos (2026-07-23, retour Kevin :
         ; elle vadrouillait au lieu de reprendre le suivi apres "descends"). Meme cause que le bug de

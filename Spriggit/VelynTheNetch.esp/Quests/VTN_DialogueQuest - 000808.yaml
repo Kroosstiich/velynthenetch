@@ -1,0 +1,16 @@
+FormKey: 000808:VelynTheNetch.esp
+EditorID: VTN_DialogueQuest
+Name:
+  TargetLanguage: English
+  Value: Velyn the Netch - Dialogue
+Flags:
+- StartGameEnabled
+Priority: 50
+QuestFormVersion: 0
+Type: Misc
+Stages:
+- Index: 10
+  Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []

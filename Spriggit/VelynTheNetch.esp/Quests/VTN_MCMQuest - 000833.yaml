@@ -1,0 +1,25 @@
+FormKey: 000833:VelynTheNetch.esp
+EditorID: VTN_MCMQuest
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VTN_MCMScript
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 000833:VelynTheNetch.esp
+    Scripts:
+    - Name: SKI_PlayerLoadGameAlias
+Name:
+  TargetLanguage: English
+  Value: Velyn the Netch
+Flags:
+- StartGameEnabled
+Priority: 0
+QuestFormVersion: 0
+Type: Misc
+NextAliasID: 1
+Aliases:
+- Name: PlayerAlias
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null

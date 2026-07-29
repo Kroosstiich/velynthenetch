@@ -206,16 +206,19 @@ bool Function HarvestWhitelistedItems(Actor akVelyn, VTN_ProgressionScript prog)
                 while j < found.Length
                     ObjectReference item = found[j]
                     if item && !item.IsDisabled() && !item.IsOffLimits() && !item.IsDeleted()
-                        if prog.SpendHarvestPoint()
-                            akVelyn.AddItem(item, 1, true)
+                        ; On agit d'abord, on ne facture qu'en cas de succes averé (2026-07-27). Avant,
+                        ; l'energie et la notification partaient sans verification : sur une ressource
+                        ; "en place" (nirnroot, plante), AddItem ne fait rien et Velyn brulait un point
+                        ; par cycle sur un objet qui ne partirait jamais.
+                        if TakeWhitelistedRef(akVelyn, item)
+                            prog.SpendHarvestPoint()
+                            prog.AddXP(GetXPPerHarvest())
                             if ShouldNotify()
                                 Notify("VTN_MsgPickupWhitelist")
                             endif
                             Debug.TraceUser("VTN", "Ramassage liste blanche : " + entry.GetName())
-                            prog.AddXP(GetXPPerHarvest())
                             return true
                         endif
-                        return false ; plus d'energie
                     endif
                     j += 1
                 endwhile
@@ -224,6 +227,31 @@ bool Function HarvestWhitelistedItems(Actor akVelyn, VTN_ProgressionScript prog)
         i += 1
     endwhile
     return false
+EndFunction
+
+; Prend une reference mise en liste blanche, QUEL QUE SOIT son type, et dit si ca a reellement marche.
+; Deux mecaniques totalement differentes selon ce qu'est l'objet, d'ou l'aiguillage (2026-07-27) :
+;   - une ressource "en place" (FLOR, TREE, ACTI, MSTT) se RECOLTE : on l'active, et la preuve de
+;     reussite est qu'elle passe a l'etat recolte (flore) ou qu'elle disparait (nirnroot, insecte) ;
+;   - un objet pose au sol se RAMASSE : AddItem deplace la reference elle-meme dans l'inventaire, et la
+;     preuve est que le compte de cet objet a augmente chez Velyn.
+; Sans cet aiguillage, AddItem etait appele sur une plante : aucun effet, aucune erreur, et le code
+; notifiait + facturait quand meme. C'est exactement le bug du nirnroot remonte par Kevin.
+bool Function TakeWhitelistedRef(Actor akVelyn, ObjectReference akItem)
+    Form base = akItem.GetBaseObject()
+    if !base
+        return false
+    endif
+    int baseType = base.GetType()
+    if baseType == VTN_FormTypeFlora || baseType == VTN_FormTypeTree || baseType == VTN_FormTypeActivator || baseType == VTN_FormTypeMovableStatic
+        BeginRedirect()
+        akItem.Activate(Game.GetPlayer())
+        EndRedirect()
+        return akItem.IsHarvested() || akItem.IsDisabled()
+    endif
+    int before = akVelyn.GetItemCount(base)
+    akVelyn.AddItem(akItem, 1, true) ; true = silencieux
+    return akVelyn.GetItemCount(base) > before
 EndFunction
 
 ; --------------------------------------------------------------------------------------------------
@@ -500,16 +528,20 @@ bool Function PickUpOfType(Actor akVelyn, VTN_ProgressionScript prog, int aiForm
         Form itemBase = item.GetBaseObject()
         bool categoryOk = itemBase && (IsWhitelisted(itemBase) || IsCategoryEnabled(itemBase, aiFormType))
         if item && !item.IsDisabled() && !item.IsOffLimits() && itemBase && !item.IsDeleted() && categoryOk && IsWorthTaking(itemBase)
-            if prog.SpendHarvestPoint()
-                akVelyn.AddItem(item, 1, true) ; true = silencieux
+            ; Meme regle que les ressources : pas de succes, pas de cout (2026-07-27). Les types scannes
+            ; ici sont toujours des objets transportables, donc l'echec est rare, mais on ne veut plus
+            ; d'une notification qui annonce un ramassage qui n'a pas eu lieu.
+            int before = akVelyn.GetItemCount(itemBase)
+            akVelyn.AddItem(item, 1, true) ; true = silencieux
+            if akVelyn.GetItemCount(itemBase) > before
+                prog.SpendHarvestPoint()
+                prog.AddXP(GetXPPerHarvest())
                 if ShouldNotify()
                     Notify("VTN_MsgPickup")
                 endif
-                Debug.TraceUser("VTN", "Ramassage : " + item.GetBaseObject().GetName())
-                prog.AddXP(GetXPPerHarvest())
+                Debug.TraceUser("VTN", "Ramassage : " + itemBase.GetName())
                 return true
             endif
-            return false ; plus d'energie
         endif
         i += 1
     endwhile
@@ -576,7 +608,58 @@ bool Function HarvestNearestFlora(Actor akVelyn, VTN_ProgressionScript prog)
     if HarvestFromType(akVelyn, prog, VTN_FormTypeFlora)
         return true
     endif
-    return HarvestFromType(akVelyn, prog, VTN_FormTypeTree)
+    if HarvestFromType(akVelyn, prog, VTN_FormTypeTree)
+        return true
+    endif
+    return HarvestNearestNirnroot(akVelyn, prog)
+EndFunction
+
+; --------------------------------------------------------------------------------------------------
+; Nirnroots (2026-07-27, bug remonte par Kevin : "j'ai la notif mais elle ne ramasse pas le nirnroot")
+; --------------------------------------------------------------------------------------------------
+; Le nirnroot et le nirnroot cramoisi ne sont NI FLOR NI TREE : ce sont des ACTI (24). Verifie dans
+; Skyrim.esm -> TreeFloraNirnroot01 et TreeFloraNirnrootRed01 sont bien des records ACTI. Bethesda les a
+; faits ainsi parce qu'ils brillent et bourdonnent en boucle : a la recolte, le script vanilla masque la
+; plante et fait apparaitre une version "vide" a la place, au lieu de passer par le mecanisme Flora.
+; Deux consequences pour nous :
+;   - le scan flore (FLOR/TREE) ne les voit tout simplement pas ;
+;   - IsHarvested() ne passera JAMAIS a true dessus, ce n'est pas une Flora.
+; Les deux variantes partagent le meme script (verifie dans le VMAD des deux records) -> un seul cast
+; les identifie toutes les deux, sans aucun FormID en dur. Meme pattern eprouve que "as Critter" pour
+; les insectes et "as MineOreScript" pour les filons.
+; Preuve de reussite : NirnrootACTIVATORScript.onActivate() donne l'ingredient a l'acteur declencheur
+; (d'ou la redirection, comme pour la flore) puis fait self.DisableNoWait() -> IsDisabled() est donc
+; notre test, exactement comme pour un insecte attrape. Le script vanilla passe en plus dans l'etat
+; "AlreadyHarvested" : une seconde activation ne peut pas dupliquer l'ingredient.
+bool Function HarvestNearestNirnroot(Actor akVelyn, VTN_ProgressionScript prog)
+    ObjectReference[] found = PO3_SKSEFunctions.FindAllReferencesOfFormType(akVelyn, VTN_FormTypeActivator, GetRadiusFlora())
+    if !found || found.Length == 0
+        return false
+    endif
+
+    int i = 0
+    while i < found.Length
+        ObjectReference plant = found[i]
+        NirnrootACTIVATORScript nirn = plant as NirnrootACTIVATORScript
+        if nirn && !plant.IsDisabled() && !plant.IsOffLimits() && !IsBlacklisted(plant.GetBaseObject())
+            ; Meme regle que partout ailleurs : on agit d'abord, on ne facture qu'en cas de succes.
+            BeginRedirect()
+            plant.Activate(Game.GetPlayer())
+            EndRedirect()
+
+            if plant.IsDisabled()
+                prog.SpendHarvestPoint()
+                prog.AddXP(GetXPPerHarvest())
+                if ShouldNotify()
+                    Notify("VTN_MsgHarvestFlora")
+                endif
+                Debug.TraceUser("VTN", "Recolte nirnroot : " + plant.GetBaseObject().GetName())
+                return true
+            endif
+        endif
+        i += 1
+    endwhile
+    return false
 EndFunction
 
 bool Function HarvestFromType(Actor akVelyn, VTN_ProgressionScript prog, int aiFormType)

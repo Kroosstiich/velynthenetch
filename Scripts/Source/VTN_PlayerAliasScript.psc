@@ -85,6 +85,10 @@ Event OnUpdate()
         prog.ProcessDebugRequests()
         prog.UpdateEnergy()
         AccrueTransportXP(prog)
+        ; Production de gelee de netch (2026-07-29). Branchee sur le meme tick que l'energie : les deux
+        ; raisonnent en temps de jeu ecoule, la frequence d'appel n'a donc aucune influence sur le
+        ; resultat. On passe l'acteur car le script de progression est porte par la quete, pas par elle.
+        prog.UpdateJelly((VTN_MainQuest as VTN_MainQuestScript).GetVelynActor())
     endif
 
     RegisterForSingleUpdate(3.0)

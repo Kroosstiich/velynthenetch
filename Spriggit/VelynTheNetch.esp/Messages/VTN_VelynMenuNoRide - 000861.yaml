@@ -1,0 +1,26 @@
+FormKey: 000861:VelynTheNetch.esp
+EditorID: VTN_VelynMenuNoRide
+Name:
+  TargetLanguage: English
+  Value: Velyn
+Description:
+  TargetLanguage: English
+  Value: 'What would you like to do?'
+Flags:
+- MessageBox
+MenuButtons:
+- Text:
+    TargetLanguage: English
+    Value: See what she's carrying
+- Text:
+    TargetLanguage: English
+    Value: Wait here
+- Text:
+    TargetLanguage: English
+    Value: Come along
+- Text:
+    TargetLanguage: English
+    Value: How are you?
+- Text:
+    TargetLanguage: English
+    Value: Never mind

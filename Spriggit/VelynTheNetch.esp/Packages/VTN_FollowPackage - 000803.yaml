@@ -1,0 +1,47 @@
+FormKey: 000803:VelynTheNetch.esp
+EditorID: VTN_FollowPackage
+Type: Package
+PreferredSpeed: Run
+ScheduleMonth: -1
+ScheduleDayOfWeek: Any
+ScheduleHour: -1
+ScheduleMinute: -1
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 000800:VelynTheNetch.esp
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Data:
+    MutagenObjectType: GetGlobalValueConditionData
+    Global: 00081A:VelynTheNetch.esp
+  ComparisonValue: 0
+PackageTemplate: 019B2C:Skyrim.esm
+DataInputVersion: 4
+Data:
+- Key: 0
+  Value:
+    MutagenObjectType: PackageDataTarget
+    Type: SingleRef
+    Target:
+      MutagenObjectType: PackageTargetSpecificReference
+      Reference: 000014:Skyrim.esm
+- Key: 1
+  Value:
+    MutagenObjectType: PackageDataFloat
+    Data: 180
+- Key: 2
+  Value:
+    MutagenObjectType: PackageDataFloat
+    Data: 500
+- Key: 4
+  Value:
+    MutagenObjectType: PackageDataBool
+    Data: True
+- Key: 6
+  Value:
+    MutagenObjectType: PackageDataBool
+- Key: 8
+  Value:
+    MutagenObjectType: PackageDataBool

@@ -42,6 +42,7 @@ Function ResetToDefaults()
     ; Page Recolte
     ResetG("VTN_CfgHarvestRadius", 400.0)
     ResetG("VTN_CfgEnergyPerHour", 10.0)
+    ResetG("VTN_CfgJellyDays", 3.0)
     ResetG("VTN_CfgXPPerHarvest", 15.0)
     ResetG("VTN_CfgXPTransportRate", 0.002)
     ResetG("VTN_CfgRadiusFlora", 0.0)

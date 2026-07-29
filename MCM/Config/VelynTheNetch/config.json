@@ -126,6 +126,19 @@
                     }
                 },
                 {
+                    "id": "VTN_CfgJellyDays",
+                    "text": "$VTN_JellyDays",
+                    "help": "$VTN_JellyDays_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 14,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|862"
+                    }
+                },
+                {
                     "id": "VTN_CfgXPPerHarvest",
                     "text": "$VTN_XPPerHarvest",
                     "help": "$VTN_XPPerHarvest_Help",
@@ -371,6 +384,24 @@
                     "type": "header"
                 },
                 {
+                    "text": "$VTN_RideWarning",
+                    "help": "$VTN_RideWarning_Help",
+                    "type": "text"
+                },
+                {
+                    "id": "VTN_CfgRideOffsetX",
+                    "text": "$VTN_RideOffsetX",
+                    "help": "$VTN_RideOffsetX_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": -80,
+                        "max": 80,
+                        "step": 1,
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|82F"
+                    }
+                },
+                {
                     "id": "VTN_CfgRideOffsetY",
                     "text": "$VTN_RideOffsetY",
                     "help": "$VTN_RideOffsetY_Help",
@@ -394,19 +425,6 @@
                         "step": 1,
                         "sourceType": "GlobalValue",
                         "sourceForm": "VelynTheNetch.esp|831"
-                    }
-                },
-                {
-                    "id": "VTN_CfgRideOffsetX",
-                    "text": "$VTN_RideOffsetX",
-                    "help": "$VTN_RideOffsetX_Help",
-                    "type": "slider",
-                    "valueOptions": {
-                        "min": -80,
-                        "max": 80,
-                        "step": 1,
-                        "sourceType": "GlobalValue",
-                        "sourceForm": "VelynTheNetch.esp|82F"
                     }
                 }
             ]

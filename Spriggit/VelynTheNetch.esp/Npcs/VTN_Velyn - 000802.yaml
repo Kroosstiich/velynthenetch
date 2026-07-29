@@ -1,0 +1,46 @@
+FormKey: 000802:VelynTheNetch.esp
+EditorID: VTN_Velyn
+ObjectBounds:
+  First: -22, -14, 0
+  Second: 22, 14, 32
+Configuration:
+  Flags:
+  - Essential
+  - Invulnerable
+  - DoesntAffectStealthMeter
+  Level:
+    MutagenObjectType: PcLevelMult
+    LevelMult: 1
+  CalcMinLevel: 1
+  CalcMaxLevel: 1
+  # ⚑ CAUSE RACINE du "Velyn ne bouge pas au campement de Revus" (trouvee 2026-07-25 via un warning du
+  # Creation Kit : "Speed multiplier is zero on NPC 'VTN_Velyn'"). Le champ etait tout simplement ABSENT
+  # du record -> vitesse 0 -> elle joue son animation de deplacement mais ne se deplace jamais, ce qui
+  # correspond exactement au symptome decrit ("elle essaie d'avancer mais reste sur place"). Le probleme
+  # ne se voyait qu'AVANT l'achat car AcquireVelyn fait SetActorValue("SpeedMult", 250) a l'acquisition,
+  # ce qui masquait le defaut du record de base ensuite.
+  SpeedMultiplier: 100
+Race: 028580:Dragonborn.esm
+Factions:
+- Faction: 000DB1:Skyrim.esm
+  Fluff: 0x000000
+AIData:
+  Aggression: Unaggressive
+  Confidence: Foolhardy
+  EnergyLevel: 50
+  Assistance: HelpsNobody
+# ⚑ UN SEUL package : VTN_FollowPackage (suivi du joueur APRES l'achat, conditionne sur VTN_HasVelyn == 1).
+# AVANT l'achat, aucun package ne s'applique -> elle reste immobile, posee sur un rocher du campement de
+# Revus (decision Kevin 2026-07-25). Historique : un package de vadrouille (sandbox) puis un package de
+# suivi cible sur Revus ont tous deux ete essayes et se sont reveles INOPERANTS sur cette creature, apres
+# avoir elimine methodiquement vitesse / navmesh / gel / conditions / structure du package / etat de la
+# sauvegarde (voir journal, sessions du 2026-07-25). Ne pas re-tenter sans element nouveau.
+Packages:
+- 000803:VelynTheNetch.esp
+Name:
+  TargetLanguage: English
+  Value: Velyn
+NAM5: 255
+Height: 0.15
+Weight: 50
+SoundLevel: Silent

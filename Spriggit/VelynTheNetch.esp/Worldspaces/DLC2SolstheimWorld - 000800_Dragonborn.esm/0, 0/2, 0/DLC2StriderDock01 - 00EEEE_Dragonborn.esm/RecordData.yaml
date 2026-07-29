@@ -1,0 +1,26 @@
+FormKey: 00EEEE:Dragonborn.esm
+IsCompressed: True
+MajorRecordFlagsRaw: 262144
+VersionControl: 947482
+EditorID: DLC2StriderDock01
+FormVersion: 43
+Version2: 5
+SkyrimMajorRecordFlags:
+- Compressed
+Flags:
+- HasWater
+Grid:
+  Point: 16, 7
+  Flags: 5573888
+Persistent:
+- MutagenObjectType: PlacedNpc
+  FormKey: 00080F:VelynTheNetch.esp
+  EditorID: VelynRef
+  Base: 000802:VelynTheNetch.esp
+  Placement:
+    # Posee sur le rocher a cote de Revus (2026-07-25, position relevee en jeu par Kevin avec
+    # player.getpos : X 69110.32 / Y 29798.49 / Z 1180.55 = ses pieds sur le rocher).
+    # Z porte a 1195.55 (+15) pour qu'elle levite legerement au-dessus de la pierre au lieu d'y etre
+    # encastree - un netch flotte. Facile a reajuster : un seul champ.
+    # NB : cette position ne vaut qu'AVANT l'achat ; AcquireVelyn la teleporte ensuite vers le joueur.
+    Position: 69110.32, 29798.49, 1195.55

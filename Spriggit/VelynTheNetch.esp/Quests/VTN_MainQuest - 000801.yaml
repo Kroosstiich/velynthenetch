@@ -1,0 +1,209 @@
+FormKey: 000801:VelynTheNetch.esp
+EditorID: VTN_MainQuest
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VTN_MainQuestScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_HasVelyn
+      Object: 000800:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_IsWaiting
+      Object: 00081A:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_VelynMenu
+      Object: 000824:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_VelynMenuNoRide
+      Object: 000861:VelynTheNetch.esp
+    - MutagenObjectType: ScriptIntProperty
+      Name: VTN_InventoryKey
+      Data: 38
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideEnabled
+      Object: 000829:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideOffsetX
+      Object: 00082F:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideOffsetY
+      Object: 000830:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideOffsetZ
+      Object: 000831:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgInventoryKey
+      Object: 00082D:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgFilterKey
+      Object: 000846:VelynTheNetch.esp
+  - Name: VTN_ProgressionScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_Level
+      Object: 000825:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_XP
+      Object: 000826:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_Energy
+      Object: 000827:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_HasVelyn
+      Object: 000800:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_DebugAddXP
+      Object: 000828:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgProgressionEnabled
+      Object: 00082B:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgEnergyPerHour
+      Object: 000832:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgJellyDays
+      Object: 000862:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgNotifyHarvest
+      Object: 00082C:VelynTheNetch.esp
+  - Name: VTN_HarvestScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_MainQuest
+      Object: 000801:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_HasVelyn
+      Object: 000800:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_IsWaiting
+      Object: 00081A:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgHarvestEnabled
+      Object: 00082A:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgHarvestRadius
+      Object: 00082E:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgNotifyHarvest
+      Object: 00082C:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgPickupEnabled
+      Object: 000834:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgMinItemValue
+      Object: 000835:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgOreCooldownMinutes
+      Object: 000836:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgXPPerHarvest
+      Object: 000837:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRadiusFlora
+      Object: 000839:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRadiusOre
+      Object: 00083A:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRadiusCritter
+      Object: 00083B:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRadiusItems
+      Object: 00083C:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgPickupGoldEnabled
+      Object: 00083D:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgPickupMiscEnabled
+      Object: 00083E:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgPickupIngredientsEnabled
+      Object: 00083F:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockDwelling
+      Object: 000840:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockPlayerHouse
+      Object: 000841:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockStore
+      Object: 000842:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockInn
+      Object: 000843:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockStable
+      Object: 000844:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgBlockFarm
+      Object: 000845:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_FilterMenu
+      Object: 000847:VelynTheNetch.esp
+  Aliases:
+  - Property:
+      Name: ''
+      Object: 000801:VelynTheNetch.esp
+      Alias: 0
+    Scripts:
+    - Name: VTN_PlayerAliasScript
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_MainQuest
+        Object: 000801:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_HasVelyn
+        Object: 000800:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_IsWaiting
+        Object: 00081A:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_DebugAcquire
+        Object: 000806:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_CfgXPTransportRate
+        Object: 000838:VelynTheNetch.esp
+  - Property:
+      Name: ''
+      Object: 000801:VelynTheNetch.esp
+      Alias: 1
+    Scripts:
+    - Name: VTN_VelynAliasScript
+      Properties:
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_MainQuest
+        Object: 000801:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_HasVelyn
+        Object: 000800:VelynTheNetch.esp
+      - MutagenObjectType: ScriptObjectProperty
+        Name: VTN_IsWaiting
+        Object: 00081A:VelynTheNetch.esp
+      - MutagenObjectType: ScriptFloatProperty
+        Name: VTN_MaxCarryWeight
+        Data: 100
+Name:
+  TargetLanguage: English
+  Value: Velyn the Netch
+Flags:
+- StartGameEnabled
+Priority: 60
+QuestFormVersion: 0
+Type: Misc
+Stages:
+- Index: 10
+  Flags:
+  - StartUpStage
+  LogEntries:
+  - Flags: []
+NextAliasID: 2
+Aliases:
+- Name: Player
+  Flags: []
+  ForcedReference: 000014:Skyrim.esm
+  VoiceTypes: Null
+- ID: 1
+  Name: Velyn
+  Flags: []
+  ForcedReference: 00080F:VelynTheNetch.esp
+  VoiceTypes: Null
