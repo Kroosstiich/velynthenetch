@@ -65,6 +65,13 @@ She has rules, and they matter:
 Every one of these rules can be tuned or turned off in the MCM: what she picks up, how far she reaches,
 which places are off limits, how fast she learns.
 
+**Netch jelly.** *(new in 1.1.0)* A netch that feels settled sheds a little jelly when it rests, and
+Velyn is no different. Every few days she quietly adds some to what she is carrying, and the more she has
+grown, the more she gives: one at first, up to five once she is fully grown. There is nothing to do and
+nothing to harvest from her, it simply accumulates as she travels with you. If she is already loaded to
+the brim she holds on to it until you lighten her, so none of it is wasted. How often it happens is
+adjustable in the MCM, and it can be turned off entirely.
+
 ---
 
 ## Requirements
@@ -79,9 +86,14 @@ which places are off limits, how fast she learns.
 
 **Optional**
 
-**Piggyback** [LIENS ICI] lets Velyn **ride on your back** instead of following you on the ground. It is
-a separate plugin, install it only if that appeals to you. Without it, the **Climb onto my back** entry
-simply does not appear in her menu and Velyn follows you normally. Nothing else changes.
+**[Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556)** lets Velyn **ride on your
+back** instead of following you on the ground. It is a separate plugin, install it only if that appeals
+to you. Without it, the **Climb onto my back** entry simply does not appear in her menu and Velyn follows
+you normally. Nothing else changes.
+
+If you do use it, **take version 1.1.0 or later**. It fixes her pushing you sideways while carried, the
+way she seemed to teleport around you when you turned quickly, and her sitting too far back on smaller
+characters. Being a separate mod, it updates separately from Velyn.
 
 **[PapyrusUtil](https://www.nexusmods.com/skyrimspecialedition/mods/13048)** lets you set **your own
 gathering rules**. With it installed, you can bind a key in the MCM, look at any item, and tell Velyn to
