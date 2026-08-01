@@ -89,13 +89,17 @@ Translations are welcome, no permission needed.
 
 ## Permissions
 
+Velyn the Netch is licensed under **CC BY-NC 4.0** — see [LICENSE](LICENSE).
+
 You may modify this mod, extend it, or build on it, provided you **credit Kroosstiich**, **link back to
-the Nexus page**, and make your mod **a dependency of Velyn** rather than a standalone copy of it.
+the Nexus page**, make your mod **a dependency of Velyn** rather than a standalone copy of it, and keep
+it **non-commercial** — Velyn and anything derived from it may not be sold, put behind a paywall, or
+bundled into anything paid.
 
 Re-uploading Velyn as-is elsewhere is not allowed, **except on translation sites** such as *La Confrérie
 des Traducteurs*, as long as they link back.
 
-Full terms: see the permissions section of
+Full terms: see [LICENSE](LICENSE), and the permissions section of
 [docs/07-description-nexus-velyn.md](docs/07-description-nexus-velyn.md).
 
 ---
