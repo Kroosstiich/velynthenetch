@@ -12,6 +12,15 @@ Flags:
 Grid:
   Point: 16, 7
   Flags: 5573888
+# Dragonborn uses the worldspace water height in this cell (FLT_MAX sentinel).
+WaterHeight: 3.4028235E+38
+Regions:
+- 018681:Dragonborn.esm
+- 01EF70:Dragonborn.esm
+- 01B9A9:Dragonborn.esm
+- 0195C3:Dragonborn.esm
+- 028649:Dragonborn.esm
+- 02F78F:Skyrim.esm
 Persistent:
 - MutagenObjectType: PlacedNpc
   FormKey: 00080F:VelynTheNetch.esp

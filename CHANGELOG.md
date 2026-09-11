@@ -4,6 +4,36 @@ All notable changes to Velyn the Netch are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] - 2026-09-11
+
+### Fixed
+
+- **Solstheim water level regression.** The `DLC2SolstheimWorld` override (`000800:Dragonborn.esm`)
+  retained its identity but omitted world settings during an earlier cleanup. The generated override
+  therefore lacked the vanilla water defaults; omitted fields were not automatically inherited.
+  - Forwarded Dragonborn's water and LOD water types, LOD water height (`256`), and default land/water
+    heights (`-4590` / `256`).
+  - Restored the associated location, climate, cloud model, map camera settings, bounds, music and
+    distant terrain texture settings.
+  - Restored `DLC2StriderDock01` (`00EEEE:Dragonborn.esm`) water height to the vanilla `FLT_MAX`
+    sentinel (`3.4028235E+38`) and restored its six region links. Velyn's placed reference is unchanged.
+- The missing water fields were confirmed in both the 1.0.0 and 1.1.0 release archives; this was not
+  introduced by a newly added Skyrim runtime dependency.
+
+### Validation and packaging
+
+- Binary comparison against `Dragonborn.esm` confirms that the checked water, region and map fields
+  match the master. Record identities and unrelated record payloads are unchanged from 1.1.0.
+- The Nexus FOMOD updates only the ESP and installer version metadata. Compiled scripts, translations
+  and other packaged files are unchanged. No new master or dependency was added.
+- These are source/binary checks, not a claim of a completed in-game before/after comparison.
+
+### Documentation
+
+- Updated README release information and AI credits: original assistance by Claude (Anthropic),
+  current maintenance assistance by Codex (OpenAI), with Kroosstiich retaining creative direction.
+- Thanks to **TheDragonsDanced** for reporting the water issue.
+
 ## [1.1.0] - 2026-07-29
 
 ### Added

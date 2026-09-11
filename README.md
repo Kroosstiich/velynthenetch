@@ -5,6 +5,11 @@ you and carries your things.
 
 - **Nexus page:** [Velyn The Netch](https://www.nexusmods.com/skyrimspecialedition/mods/186573)
 - **Full description, requirements and permissions:** [docs/07-description-nexus-velyn.md](docs/07-description-nexus-velyn.md)
+- **Latest release: 1.1.1** — fixes the unintended drop in Solstheim's water level. See the
+  [technical changelog](CHANGELOG.md#111---2026-09-11).
+
+Originally developed with assistance from **Claude (Anthropic)**, Velyn is now maintained with
+assistance from **Codex (OpenAI)**. Concept, design and direction remain Kroosstiich's.
 
 ---
 
@@ -108,7 +113,8 @@ Full terms: see [LICENSE](LICENSE), and the permissions section of
 
 - **Concept, design and direction:** Kroosstiich. Velyn is his idea: her character, her behaviour, and
   every design decision behind her.
-- **AI assistance:** the mod was coded with the help of an AI assistant (Claude), which wrote the
-  Papyrus scripts and plugin records to specification and helped track down bugs. The ideas, design and
-  direction are Kroosstiich's.
+- **Original AI assistance:** Claude (Anthropic), for the initial Papyrus scripts, plugin records and
+  debugging assistance, following Kroosstiich's specifications.
+- **Current AI assistance:** Codex (OpenAI), for ongoing source maintenance, debugging and release
+  preparation, under Kroosstiich's direction.
 - Bethesda, for the netch and for Revus Sarvani.
