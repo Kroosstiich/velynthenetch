@@ -5,11 +5,11 @@ you and carries your things.
 
 - **Nexus page:** [Velyn The Netch](https://www.nexusmods.com/skyrimspecialedition/mods/186573)
 - **Full description, requirements and permissions:** [docs/07-description-nexus-velyn.md](docs/07-description-nexus-velyn.md)
-- **Latest release: 1.1.1** — fixes the unintended drop in Solstheim's water level. See the
-  [technical changelog](CHANGELOG.md#111---2026-09-11).
+- **Latest release: 1.2.0**: natural movement while Velyn rides on your back (needs Piggyback 1.2.0
+  or later). See the [technical changelog](CHANGELOG.md#120---2026-09-30).
 
-Originally developed with assistance from **Claude (Anthropic)**, Velyn is now maintained with
-assistance from **Codex (OpenAI)**. Concept, design and direction remain Kroosstiich's.
+Developed with the help of two AI coding assistants, **Claude (Anthropic)** and **OpenAI Codex**.
+Concept, design, direction and in-game testing are Kroosstii's.
 
 ---
 
@@ -56,11 +56,14 @@ and copies the result into a Mod Organizer 2 mod folder for testing.
 **Required at runtime:** SKSE64, Address Library, SkyUI, MCM Helper, powerofthree's Papyrus Extender,
 and the Dragonborn DLC.
 
-**Optional:** [Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556) (carrying Velyn on your back), PapyrusUtil
+**Optional:** [Piggyback](https://www.nexusmods.com/skyrimspecialedition/mods/186556) (carrying Velyn on your back; 1.2.0 or
+later for the natural movement delay), PapyrusUtil
 (manual item filters), Dynamic String Distributor (translations).
 
 Piggyback is treated as a genuinely optional dependency: `Piggyback.IsInstalled()` returns `false` when
-the plugin is absent, and the corresponding menu entry is hidden rather than offered and broken.
+the plugin is absent, and the corresponding menu entry is hidden rather than offered and broken. The
+natural movement delay is applied with `Piggyback.SetFollowLag` only when `Piggyback.GetVersion()` reports
+1.2.0 or later, so an older Piggyback keeps working exactly as before.
 
 ---
 
@@ -94,11 +97,11 @@ Translations are welcome, no permission needed.
 
 ## Permissions
 
-Velyn the Netch is licensed under **CC BY-NC 4.0** — see [LICENSE](LICENSE).
+Velyn the Netch is licensed under **CC BY-NC 4.0**, see [LICENSE](LICENSE).
 
-You may modify this mod, extend it, or build on it, provided you **credit Kroosstiich**, **link back to
+You may modify this mod, extend it, or build on it, provided you **credit Kroosstii**, **link back to
 the Nexus page**, make your mod **a dependency of Velyn** rather than a standalone copy of it, and keep
-it **non-commercial** — Velyn and anything derived from it may not be sold, put behind a paywall, or
+it **non-commercial**: Velyn and anything derived from it may not be sold, put behind a paywall, or
 bundled into anything paid.
 
 Re-uploading Velyn as-is elsewhere is not allowed, **except on translation sites** such as *La Confrérie
@@ -111,10 +114,10 @@ Full terms: see [LICENSE](LICENSE), and the permissions section of
 
 ## Credits
 
-- **Concept, design and direction:** Kroosstiich. Velyn is his idea: her character, her behaviour, and
+- **Concept, design and direction:** Kroosstii. Velyn is Kroosstii's idea: her character, her behaviour, and
   every design decision behind her.
-- **Original AI assistance:** Claude (Anthropic), for the initial Papyrus scripts, plugin records and
-  debugging assistance, following Kroosstiich's specifications.
-- **Current AI assistance:** Codex (OpenAI), for ongoing source maintenance, debugging and release
-  preparation, under Kroosstiich's direction.
+- **AI assistance:** Velyn is developed with the help of two AI coding assistants,
+  **Claude (Anthropic)** and **OpenAI Codex**, which wrote the Papyrus scripts and plugin records to Kroosstii's
+  specifications and helped debug and document them. The concept, direction, design decisions and
+  in-game testing are Kroosstii's.
 - Bethesda, for the netch and for Revus Sarvani.

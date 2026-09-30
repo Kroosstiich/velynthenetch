@@ -32,6 +32,12 @@ VirtualMachineAdapter:
       Name: VTN_CfgRideOffsetZ
       Object: 000831:VelynTheNetch.esp
     - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideMoveLag
+      Object: 000864:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
+      Name: VTN_CfgRideTurnLag
+      Object: 000865:VelynTheNetch.esp
+    - MutagenObjectType: ScriptObjectProperty
       Name: VTN_CfgInventoryKey
       Object: 00082D:VelynTheNetch.esp
     - MutagenObjectType: ScriptObjectProperty

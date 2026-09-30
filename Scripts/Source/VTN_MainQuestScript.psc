@@ -19,6 +19,10 @@ GlobalVariable Property VTN_CfgRideEnabled Auto
 GlobalVariable Property VTN_CfgRideOffsetX Auto
 GlobalVariable Property VTN_CfgRideOffsetY Auto
 GlobalVariable Property VTN_CfgRideOffsetZ Auto
+; Delai naturel du portage (Piggyback 1.2.0, SetFollowLag, 2026-09-28) : temps de reponse en secondes
+; de la position et du cap. 0 = desactive = comportement Piggyback 1.1 a l'identique.
+GlobalVariable Property VTN_CfgRideMoveLag Auto
+GlobalVariable Property VTN_CfgRideTurnLag Auto
 GlobalVariable Property VTN_CfgInventoryKey Auto
 ; Touche de filtre manuel (Bloc 3 extension, 2026-07-23bis) : liste blanche/noire d'objets via
 ; PapyrusUtil. Contrairement a la touche inventaire, PAS de defaut : 0 = non liee, la fonctionnalite
@@ -33,6 +37,9 @@ float Property VTN_RideOffsetZ = -90.0 Auto  ; etait -55 -> la placait au niveau
                                              ; netch s'etend vers le HAUT depuis son origine, donc il faut
                                              ; descendre l'origine bien plus bas pour que le corps VISIBLE
                                              ; se retrouve a hauteur des genoux.
+; Defauts du delai si la globale manque (valeurs de depart a tester en jeu, voir ApplyRideLag).
+float Property VTN_RideMoveLag = 0.50 Auto
+float Property VTN_RideTurnLag = 0.60 Auto
 int Property VTN_InventoryKey = 38 Auto ; L = DXScanCode 38 (0x26). ATTENTION : 76 (0x4C) = Numpad 5,
                                         ; PAS L - erreur de la valeur precedente, cause reelle du "L ne
                                         ; fonctionne pas" (2026-07-22, verifie sur la table DIK officielle).
@@ -429,6 +436,9 @@ Function ToggleRide(Actor velynActor)
             _appliedOffsetX = ox
             _appliedOffsetY = oy
             _appliedOffsetZ = oz
+            ; Le reglage de delai appartient a l'attache : Piggyback l'oublie a chaque Detach, il faut
+            ; donc le repousser apres CHAQUE Attach.
+            ApplyRideLag(velynActor)
             Notify("VTN_MsgMount")
             Debug.TraceUser("VTN", "Piggyback : attachee sur " + VTN_RideNode)
         else
@@ -461,4 +471,47 @@ Function RefreshRideOffsetIfChanged()
         _appliedOffsetZ = oz
         Debug.TraceUser("VTN", "Piggyback : offset mis a jour a chaud (" + ox + ", " + oy + ", " + oz + ")")
     endif
+    ; Meme principe pour le delai : un curseur bouge au MCM pendant le portage -> applique sans descendre
+    ; (SetFollowLag prend effet en douceur, meme en plein portage).
+    if GetRideLag(VTN_CfgRideMoveLag, VTN_RideMoveLag) != _appliedMoveLag || GetRideLag(VTN_CfgRideTurnLag, VTN_RideTurnLag) != _appliedTurnLag
+        ApplyRideLag(velynActor)
+    endif
+EndFunction
+
+; ==================================================================================================
+; Delai naturel du portage (Piggyback 1.2.0, 2026-09-28)
+; ==================================================================================================
+; Sans delai, Velyn est recollee au dos a CHAQUE image : quand le joueur demarre, s'arrete ou tourne,
+; elle bouge exactement en meme temps, ce qui fait "objet fixe". SetFollowLag lui donne un temps de
+; reponse : elle suit le mouvement avec un leger retard puis se recale sans rebondir.
+;
+; Compatibilite : SetFollowLag et GetVersion n'existent qu'a partir de Piggyback 1.2.0. Sur une DLL
+; 1.1.x, la native n'est pas enregistree : l'appel ecrit une erreur dans le log Papyrus et renvoie la
+; valeur par defaut (0). On teste donc GetVersion() avant, et on ne l'appelle qu'au montage ou quand un
+; curseur change (jamais a chaque tick), pour ne pas remplir le log d'un joueur reste en 1.1.
+float _appliedMoveLag = -1.0
+float _appliedTurnLag = -1.0
+
+; Valeur du MCM si la globale existe, sinon le defaut du script. 0 est une valeur legitime (delai
+; desactive) : on teste l'existence de la globale, pas sa valeur (meme regle que GetRideOffset).
+float Function GetRideLag(GlobalVariable akConfig, float afFallback)
+    if akConfig
+        return akConfig.GetValue()
+    endif
+    return afFallback
+EndFunction
+
+Function ApplyRideLag(Actor velynActor)
+    float moveLag = GetRideLag(VTN_CfgRideMoveLag, VTN_RideMoveLag)
+    float turnLag = GetRideLag(VTN_CfgRideTurnLag, VTN_RideTurnLag)
+    ; Memorise meme si la DLL est trop ancienne : sinon le tick retenterait toutes les 3 s.
+    _appliedMoveLag = moveLag
+    _appliedTurnLag = turnLag
+    int version = Piggyback.GetVersion()
+    if version < 10200
+        Debug.TraceUser("VTN", "Piggyback : delai ignore (DLL " + version + ", 1.2.0 requise)")
+        return
+    endif
+    bool ok = Piggyback.SetFollowLag(velynActor, moveLag, turnLag)
+    Debug.TraceUser("VTN", "Piggyback : delai move=" + moveLag + " s, turn=" + turnLag + " s, ok=" + ok)
 EndFunction

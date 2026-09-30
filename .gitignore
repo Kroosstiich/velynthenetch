@@ -13,3 +13,7 @@ tools/
 .vs/
 .idea/
 *.bak
+
+# Espace de travail de l IA et consignes locales (jamais publies)
+.claude/
+CLAUDE.md

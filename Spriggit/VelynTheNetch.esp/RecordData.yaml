@@ -6,7 +6,7 @@ GameRelease: SkyrimSE
 ModHeader:
   Flags:
   - Small
-  Author: Kevin
+  Author: Kroosstii
   Description: Velyn the Netch - compagnon inventaire flottant
   MasterReferences:
   - Master: Skyrim.esm

@@ -4,6 +4,36 @@ All notable changes to Velyn the Netch are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-09-30
+
+This release only adds support for Piggyback's new natural follow lag. No other gameplay change.
+
+### Added
+
+- **Natural movement while carried.** After every `Piggyback.Attach`, `VTN_MainQuestScript.ApplyRideLag()`
+  calls `Piggyback.SetFollowLag` so Velyn follows the player's moves and turns with a short response
+  time instead of moving in perfect sync. Guarded by `Piggyback.GetVersion() >= 10200`: with Piggyback
+  1.1.x the call is skipped and logged to `VTN.log`, and carrying behaves exactly as before.
+- Two MCM sliders on the Carrying page, under *Natural movement*: movement delay and turning delay,
+  0 to 3 seconds in steps of 0.05 (0 turns the effect off). Defaults 0.50 s and 0.60 s. Changes apply
+  live while Velyn is carried (checked on the existing 3-second player alias tick).
+- Globals `VTN_CfgRideMoveLag` (`000864`) and `VTN_CfgRideTurnLag` (`000865`), filled on
+  `VTN_MainQuestScript`. The MCM *Reset to defaults* button restores them.
+- MCM strings in all 11 translation files (English text everywhere, French in `VelynTheNetch_FRENCH.txt`).
+
+### Changed
+
+- Plugin header author set to `Kroosstii`.
+- Packaged `.pex` headers no longer carry the build machine's user and computer names
+  (`Build` / `BUILDHOST`); the bytecode is unchanged.
+- README and credits: Velyn is developed with the help of Claude (Anthropic) and OpenAI Codex.
+
+### Compatibility
+
+- Piggyback remains optional. 1.2.0 or later is needed for the delay; 1.2.1 lifts the 2-second cap,
+  so the full 0 to 3 s slider range takes effect.
+- No new master. Adds two records; safe to install over 1.1.1 on an existing save.
+
 ## [1.1.1] - 2026-09-11
 
 ### Fixed

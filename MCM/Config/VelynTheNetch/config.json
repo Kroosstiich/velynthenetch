@@ -426,6 +426,38 @@
                         "sourceType": "GlobalValue",
                         "sourceForm": "VelynTheNetch.esp|831"
                     }
+                },
+                {
+                    "text": "$VTN_Header_RideFeel",
+                    "type": "header"
+                },
+                {
+                    "id": "VTN_CfgRideMoveLag",
+                    "text": "$VTN_RideMoveLag",
+                    "help": "$VTN_RideMoveLag_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 3,
+                        "step": 0.05,
+                        "formatString": "{2} s",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|864"
+                    }
+                },
+                {
+                    "id": "VTN_CfgRideTurnLag",
+                    "text": "$VTN_RideTurnLag",
+                    "help": "$VTN_RideTurnLag_Help",
+                    "type": "slider",
+                    "valueOptions": {
+                        "min": 0,
+                        "max": 3,
+                        "step": 0.05,
+                        "formatString": "{2} s",
+                        "sourceType": "GlobalValue",
+                        "sourceForm": "VelynTheNetch.esp|865"
+                    }
                 }
             ]
         }

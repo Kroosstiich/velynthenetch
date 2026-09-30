@@ -66,6 +66,8 @@ Function ResetToDefaults()
     ResetG("VTN_CfgRideOffsetX", 18.0)
     ResetG("VTN_CfgRideOffsetY", -60.0)
     ResetG("VTN_CfgRideOffsetZ", -90.0)
+    ResetG("VTN_CfgRideMoveLag", 0.50)
+    ResetG("VTN_CfgRideTurnLag", 0.60)
 
     ; Rafraichit les valeurs affichees dans le menu ouvert (natif MCM_ConfigBase). Les rebinds de touche
     ; (inventaire/filtre) et l'offset de portage sont repris automatiquement par les ticks dedies de
