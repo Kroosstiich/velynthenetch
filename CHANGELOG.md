@@ -4,6 +4,25 @@ All notable changes to Velyn the Netch are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.1] - 2026-10-16
+
+### Fixed
+
+- **Skyrim VR could not load the plugin.** Spriggit/Mutagen wrote the plugin header as version 1.71,
+  which only Skyrim SE/AE 1.6.1130 and later understand; older executables such as Skyrim VR fail on
+  it. The header is now 1.70 (`ModHeader.Stats.Version: 1.7` in `RecordData.yaml`). Velyn only uses
+  FormIDs `0x800`-`0x865`, inside the 1.70 light-plugin range. The generated `.esp` differs from 1.2.0
+  by the 4-byte version float only.
+
+### Compatibility
+
+- Skyrim VR: not tested in game yet. Needs the VR builds of the requirements, Piggyback 1.2.2 or later
+  for carrying, and Skyrim VR ESL Support so the light plugin does not take a full slot. Velyn's menu
+  also opens on activation, so no keyboard is required.
+- Checked against Piggyback 1.2.2: none of its new functions are needed; Velyn already restores her
+  follow behaviour when a save is loaded.
+- No script, MCM or translation change.
+
 ## [1.2.0] - 2026-09-30
 
 This release only adds support for Piggyback's new natural follow lag. No other gameplay change.

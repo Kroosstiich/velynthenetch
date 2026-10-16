@@ -5,8 +5,9 @@ you and carries your things.
 
 - **Nexus page:** [Velyn The Netch](https://www.nexusmods.com/skyrimspecialedition/mods/186573)
 - **Full description, requirements and permissions:** [docs/07-description-nexus-velyn.md](docs/07-description-nexus-velyn.md)
-- **Latest release: 1.2.0**: natural movement while Velyn rides on your back (needs Piggyback 1.2.0
-  or later). See the [technical changelog](CHANGELOG.md#120---2026-09-30).
+- **Latest release: 1.2.1**: the plugin now loads on Skyrim VR (untested in VR, feedback welcome).
+  1.2.0 added natural movement while Velyn rides on your back (needs Piggyback 1.2.0 or later). See the
+  [technical changelog](CHANGELOG.md#121---2026-10-16).
 
 Developed with the help of two AI coding assistants, **Claude (Anthropic)** and **OpenAI Codex**.
 Concept, design, direction and in-game testing are Kroosstii's.
